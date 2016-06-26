@@ -1,0 +1,35 @@
+{
+  "name": "node-c-analyzer",
+  "version": "0.0.1",
+  "description": "Node module for static analysis of codes written in C programming language.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taufique71/node-c-analyzer.git"
+  },
+  "keywords": [
+    "node",
+    "c-programming-language",
+    "static-analysis"
+  ],
+  "author": "Md. Taufique Hussain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taufique71/node-c-analyzer/issues"
+  },
+  "homepage": "https://github.com/taufique71/node-c-analyzer",
+  "dependencies": {
+    "node-c-parser": "0.0.1"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
