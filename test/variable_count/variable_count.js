@@ -1,5 +1,6 @@
 var assert = require('assert');
 var expect = require("chai").expect;
+var jsonfile = require("jsonfile");
 
 describe('variable_count', function() {
     it('Should be able to require `variable_count` as a function', function () {
@@ -8,10 +9,21 @@ describe('variable_count', function() {
         assert(typeof(variable_count), "function");
     });
 
-    //it("Should have 0 variable", function(){
-        //var variable_count = require("../../lib/variable_count").variable_count;
-        //var translation_unit = require("../../lib/rules").translation_unit;
-        //var arrow = { "pointer": 0 };
+    it("Should have 0 variables", function(){
+        /*
+        *   int main(){
+        *       return 0;
+        *   }
+        * */
+        var variable_count = require("../../lib/variable_count").variable_count;
+        var file = __dirname + '/cases/case_1.json';
+        jsonfile.readFile(file, function(err, obj) {
+            var n = variable_count(obj);
+            expect(n).to.equal(0);
+        });
+    });
+
+    it("Should have 0 variables", function(){
         /*
         *   #include <stdio.h>
         *
@@ -20,99 +32,32 @@ describe('variable_count', function() {
         *       return 0;
         *   }
         * */
-        //var token_stream = [ 
-		  //{ lexeme: 'int',
-			//row: 3,
-			//col: 1,
-			//tokenClass: 'INT',
-			//keyword: true,
-			//parent: null,
-			//children: null },
-		  //{ lexeme: 'main',
-			//row: 3,
-			//col: 5,
-			//tokenClass: 'IDENTIFIER',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: '(',
-			//row: 3,
-			//col: 9,
-			//tokenClass: '(',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: ')',
-			//row: 3,
-			//col: 10,
-			//tokenClass: ')',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: '{',
-			//row: 3,
-			//col: 11,
-			//tokenClass: '{',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: 'printf',
-			//row: 4,
-			//col: 5,
-			//tokenClass: 'IDENTIFIER',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: '(',
-			//row: 4,
-			//col: 11,
-			//tokenClass: '(',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: '"Hello world !!!"',
-			//row: 4,
-			//col: 12,
-			//tokenClass: 'STRING_LITERAL',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: ')',
-			//row: 4,
-			//col: 29,
-			//tokenClass: ')',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: ';',
-			//row: 4,
-			//col: 30,
-			//tokenClass: ';',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: 'return',
-			//row: 5,
-			//col: 5,
-			//tokenClass: 'RETURN',
-			//keyword: true,
-			//parent: null,
-			//children: null },
-		  //{ lexeme: '0',
-			//row: 5,
-			//col: 12,
-			//tokenClass: 'CONSTANT',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: ';',
-			//row: 5,
-			//col: 13,
-			//tokenClass: ';',
-			//parent: null,
-			//children: null },
-		  //{ lexeme: '}',
-			//row: 6,
-			//col: 1,
-			//tokenClass: '}',
-			//parent: null,
-			//children: null } 
-		//];
+        var variable_count = require("../../lib/variable_count").variable_count;
+        var file = __dirname + '/cases/case_2.json';
+        jsonfile.readFile(file, function(err, obj) {
+            var n = variable_count(obj);
+            expect(n).to.equal(0);
+        });
+    });
 
-        //parse_tree = translation_unit(token_stream, arrow);
-		//var n = variable_count(parse_tree);
-        //expect(n).to.equal(0);
-    //});
+    it("Should have 1 variables", function(){
+        /*
+        *   #include <stdio.h>
+        *
+        *   int a;
+        *
+        *   int main(){
+        *       printf("Hello world !!!");
+        *       return 0;
+        *   }
+        * */
+        var variable_count = require("../../lib/variable_count").variable_count;
+        var file = __dirname + '/cases/case_3.json';
+        jsonfile.readFile(file, function(err, obj) {
+            var n = variable_count(obj);
+            expect(n).to.equal(0);
+        });
+    });
 
     //it("Should have 1 variable", function(){
         //var variable_count = require("../../lib/parse-tree-analyzer").variable_count;
