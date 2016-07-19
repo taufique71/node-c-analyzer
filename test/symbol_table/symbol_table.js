@@ -11,10 +11,10 @@ describe('variable_count', function() {
 
     it("Should have 0 variables", function(done){
         var variable_count = require("../../lib/symbol_table").symbol_table;
+        var add_parent_edges = require("../../lib/utility").add_parent_edges;
         var file = __dirname + '/cases/case_1.json';
         jsonfile.readFile(file, function(err, obj) {
-            var n = variable_count(obj);
-            expect(n).to.equal(0);
+            add_parent_edges(obj);
             done();
         });
     });
