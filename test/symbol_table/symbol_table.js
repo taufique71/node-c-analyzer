@@ -14,8 +14,7 @@ describe('variable_count', function() {
         var add_parent_edges = require("../../lib/utility").add_parent_edges;
         var file = __dirname + '/cases/case_4.json';
         jsonfile.readFile(file, function(err, obj) {
-            console.log(JSON.stringify(obj));
-            //console.log(symbol_table(obj));
+            //console.log(JSON.stringify(obj));
             done();
         });
     });
