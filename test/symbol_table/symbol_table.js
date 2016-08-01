@@ -12,9 +12,10 @@ describe('variable_count', function() {
     it("Should have 0 variables", function(done){
         var symbol_table = require("../../lib/symbol_table").symbol_table;
         var add_parent_edges = require("../../lib/utility").add_parent_edges;
-        var file = __dirname + '/cases/case_4.json';
+        var file = __dirname + '/cases/case_8.json';
         jsonfile.readFile(file, function(err, obj) {
-            //console.log(JSON.stringify(obj));
+            console.log(JSON.stringify(obj));
+            symbol_table(obj);
             done();
         });
     });
