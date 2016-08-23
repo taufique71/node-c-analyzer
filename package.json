@@ -26,7 +26,8 @@
   "homepage": "https://github.com/taufique71/node-c-analyzer",
   "dependencies": {
     "jsonfile": "^2.3.1",
-    "node-c-parser": "0.0.1"
+    "lodash": "^4.15.0",
+    "node-c-parser": "0.0.2"
   },
   "devDependencies": {
     "assert": "^1.4.1",

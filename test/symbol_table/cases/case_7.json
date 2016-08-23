@@ -8,7 +8,7 @@
           "title": "declaration",
           "children": [
             {
-              "title": "declaration",
+              "title": "declaration_specifiers",
               "children": [
                 {
                   "title": "type_specifier",
@@ -67,7 +67,7 @@
                                           "title": "parameter_declaration",
                                           "children": [
                                             {
-                                              "title": "declaration",
+                                              "title": "declaration_specifiers",
                                               "children": [
                                                 {
                                                   "title": "type_specifier",
@@ -181,7 +181,7 @@
               "title": "function_definition",
               "children": [
                 {
-                  "title": "declaration",
+                  "title": "declaration_specifiers",
                   "children": [
                     {
                       "title": "type_specifier",
@@ -264,7 +264,7 @@
                           "title": "declaration",
                           "children": [
                             {
-                              "title": "declaration",
+                              "title": "declaration_specifiers",
                               "children": [
                                 {
                                   "title": "type_specifier",
@@ -1492,7 +1492,7 @@
                   "title": "function_definition",
                   "children": [
                     {
-                      "title": "declaration",
+                      "title": "declaration_specifiers",
                       "children": [
                         {
                           "title": "type_specifier",
@@ -1545,7 +1545,7 @@
                                           "title": "parameter_declaration",
                                           "children": [
                                             {
-                                              "title": "declaration",
+                                              "title": "declaration_specifiers",
                                               "children": [
                                                 {
                                                   "title": "type_specifier",
