@@ -9,84 +9,14 @@ describe('Symbol table', function() {
         assert(typeof(get_symbol_table), "function");
     });
 
-    it("Should return valid symbol table", function(done){
-        var get_symbol_table = require("../../lib/symbol_table").get_symbol_table;
-        var add_parent_edges = require("../../lib/utility").add_parent_edges;
-        var file = __dirname + '/cases/case_8.json';
-        jsonfile.readFile(file, function(err, obj) {
-            //console.log(JSON.stringify(obj));
-            get_symbol_table(obj);
-            done();
-        });
-    });
-    it("Should return valid symbol table", function(done){
-        var get_symbol_table = require("../../lib/symbol_table").get_symbol_table;
-        var add_parent_edges = require("../../lib/utility").add_parent_edges;
-        var file = __dirname + '/cases/case_7.json';
-        jsonfile.readFile(file, function(err, obj) {
-            //console.log(JSON.stringify(obj));
-            get_symbol_table(obj);
-            done();
-        });
-    });
-    it("Should return valid symbol table", function(done){
-        var get_symbol_table = require("../../lib/symbol_table").get_symbol_table;
-        var add_parent_edges = require("../../lib/utility").add_parent_edges;
-        var file = __dirname + '/cases/case_6.json';
-        jsonfile.readFile(file, function(err, obj) {
-            //console.log(JSON.stringify(obj));
-            get_symbol_table(obj);
-            done();
-        });
-    });
-    it("Should return valid symbol table", function(done){
-        var get_symbol_table = require("../../lib/symbol_table").get_symbol_table;
-        var add_parent_edges = require("../../lib/utility").add_parent_edges;
-        var file = __dirname + '/cases/case_5.json';
-        jsonfile.readFile(file, function(err, obj) {
-            //console.log(JSON.stringify(obj));
-            get_symbol_table(obj);
-            done();
-        });
-    });
-    it("Should return valid symbol table", function(done){
-        var get_symbol_table = require("../../lib/symbol_table").get_symbol_table;
-        var add_parent_edges = require("../../lib/utility").add_parent_edges;
-        var file = __dirname + '/cases/case_4.json';
-        jsonfile.readFile(file, function(err, obj) {
-            //console.log(JSON.stringify(obj));
-            get_symbol_table(obj);
-            done();
-        });
-    });
-    it("Should return valid symbol table", function(done){
-        var get_symbol_table = require("../../lib/symbol_table").get_symbol_table;
-        var add_parent_edges = require("../../lib/utility").add_parent_edges;
-        var file = __dirname + '/cases/case_3.json';
-        jsonfile.readFile(file, function(err, obj) {
-            //console.log(JSON.stringify(obj));
-            get_symbol_table(obj);
-            done();
-        });
-    });
-    it("Should return valid symbol table", function(done){
-        var get_symbol_table = require("../../lib/symbol_table").get_symbol_table;
-        var add_parent_edges = require("../../lib/utility").add_parent_edges;
-        var file = __dirname + '/cases/case_2.json';
-        jsonfile.readFile(file, function(err, obj) {
-            //console.log(JSON.stringify(obj));
-            get_symbol_table(obj);
-            done();
-        });
-    });
-    it("Should return valid symbol table", function(done){
-        var get_symbol_table = require("../../lib/symbol_table").get_symbol_table;
-        var add_parent_edges = require("../../lib/utility").add_parent_edges;
-        var file = __dirname + '/cases/case_1.json';
-        jsonfile.readFile(file, function(err, obj) {
-            //console.log(JSON.stringify(obj));
-            get_symbol_table(obj);
-            done();
-        });
-    });
+    //it("Should return valid symbol table", function(done){
+        //var get_symbol_table = require("../../lib/symbol_table").get_symbol_table;
+        //var add_parent_edges = require("../../lib/utility").add_parent_edges;
+        //var file = __dirname + '/cases/case_8.json';
+        //jsonfile.readFile(file, function(err, obj) {
+            ////console.log(JSON.stringify(obj));
+            //get_symbol_table(obj);
+            //done();
+        //});
+    //});
 });
