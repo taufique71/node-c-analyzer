@@ -4,77 +4,64 @@
     "cursor": {
       "type": "object",
       "properties": {
-        "row": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "col": {
-          "type": "integer",
-          "minimum": 1
-        }
+        "row": { "type": "integer", "minimum": 1 },
+        "col": { "type": "integer", "minimum": 1 }
       },
-      "required": [
-        "row",
-        "col"
-      ]
+      "required": [ "row", "col" ]
     },
-    "identifier": {
+    "range":{
       "type": "object",
       "properties": {
-        "is_parameter": {
-          "type": "boolean"
-        },
-        "identifier_type": {
-          "type": "string",
-          "enum": [
-            "function",
-            "variable"
-          ]
-        },
-        "variable_type": {
-          "type": "string"
-        },
-        "return_type": {
-          "type": "string"
-        }
+        "start": { "$ref": "#/definitions/cursor" },
+        "end": { "$ref": "#/definitions/cursor" }
       },
-      "required": [
-        "identifier_type"
-      ]
+      "required": [ "start", "end" ]
     },
-    "scope": {
+    "token": {
       "type": "object",
       "properties": {
-        "type": {
-          "type": "string"
-        },
-        "start": {
-          "$ref": "#/definitions/cursor"
-        },
-        "end": {
-          "$ref": "#/definitions/cursor"
-        },
-        "contains": {
-          "type": "object",
-          "patternProperties": {
-            "^[A-Za-z_]([A-Za-z_]|[0-9])*$": {
-              "$ref": "#/definitions/identifier"
+        "lexeme": {"type": "string"},
+        "row": {"type": "integer", "minimum": 0},
+        "col": {"type": "integer", "minimum": 0},
+        "tokenClass": {"type": "string"},
+        "parent": {"type": "null"},
+        "children": {"type": "null"},
+        "keyword": {"type": "boolean"}
+      },
+      "required": ["lexeme", "row", "col", "tokenClass", "parent", "children"]
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "token": { "$ref": "#/definitions/token" },
+        "name_type": { "type": "null" }
+      }
+    },
+    "namespace": {
+      "type": "object",
+      "properties": {
+        "labels":{ "type": "array", "items": { "$ref": "#/definitions/name" } },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "token": { "$ref": "#/definitions/token" },
+              "name_type": { "type": "null" },
+              "members": { "type": "array", "items": { "$ref": "#/definitions/name" } }
             }
           }
-        }
-      },
-      "required": [
-        "type",
-        "start",
-        "end",
-        "contains"
-      ]
+        },
+        "ordinary_ids":{ "type": "array", "items": { "$ref": "#/definitions/name" } }
+      }
     }
   },
-  "type": "object",
-  "patternProperties": {
-    "^[A-Za-z_]([A-Za-z_]|[0-9])*$": {
-      "$ref": "#/definitions/scope"
-    }
+  "properties": {
+    "scope_name": { "type": "string" },
+    "range":{ "$ref": "#/definitions/range" },
+    "scopes": { "type": "array", "items":{ "$ref": "#" } },
+    "namespace":{ "$ref": "#/definitions/namespace" }
   }
 }
