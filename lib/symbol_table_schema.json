@@ -35,8 +35,16 @@
       "properties": {
         "name": { "type": "string" },
         "token": { "$ref": "#/definitions/token" },
-        "name_type": { "type": "null" }
-      }
+        "name_type": { 
+            "type": "string",
+            "enum": ["label", "variable", "function", "structure", "union", "enum", "typedef", "enum_const", null]
+        },
+        "variable_type": { "type": "string" },
+        "parameter": { "type": "boolean" },
+        "function_type": { "type": "string", "enum": ["regular", "inline"] },
+        "function_return_type": { "type": "string" }
+      },
+      "require": ["name", "token", "name_type"]
     },
     "namespace": {
       "type": "object",
