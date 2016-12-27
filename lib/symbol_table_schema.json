@@ -37,12 +37,13 @@
         "token": { "$ref": "#/definitions/token" },
         "name_type": {
           "type": "string",
-          "enum": ["label", "variable", "function", "typedef", "enum_const"]
+          "enum": ["label", "variable", "function", "typedef", "enum_const", "member"]
         },
         "variable_type": { "type": "string" },
         "parameter": { "type": "boolean" },
         "function_type": { "type": "string", "enum": ["regular", "inline"] },
-        "function_return_type": { "type": "string" }
+        "function_return_type": { "type": "string" },
+        "member_type": {"type": "string"}
       },
       "require": ["name", "token", "name_type"]
     },
