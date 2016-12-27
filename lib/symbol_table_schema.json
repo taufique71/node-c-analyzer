@@ -35,9 +35,9 @@
       "properties": {
         "name": { "type": "string" },
         "token": { "$ref": "#/definitions/token" },
-        "name_type": { 
-            "type": "string",
-            "enum": ["label", "variable", "function", "structure", "union", "enum", "typedef", "enum_const", null]
+        "name_type": {
+          "type": "string",
+          "enum": ["label", "variable", "function", "typedef", "enum_const"]
         },
         "variable_type": { "type": "string" },
         "parameter": { "type": "boolean" },
@@ -57,7 +57,10 @@
             "properties": {
               "name": { "type": "string" },
               "token": { "$ref": "#/definitions/token" },
-              "name_type": { "type": "null" },
+              "name_type": {
+                "type": "string",
+                "enum": ["structure", "union", "enum"]
+              },
               "members": { "type": "array", "items": { "$ref": "#/definitions/name" } }
             }
           }
