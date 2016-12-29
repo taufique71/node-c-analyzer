@@ -71,7 +71,7 @@
     }
   },
   "properties": {
-    "scope_name": { "type": "string" },
+    "scope_name": { "type": "string", "enum": ["file_scope", "function_scope", "block_scope"] },
     "range":{ "$ref": "#/definitions/range" },
     "scopes": { "type": "array", "items":{ "$ref": "#" } },
     "namespace":{ "$ref": "#/definitions/namespace" }
