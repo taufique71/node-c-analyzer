@@ -27,11 +27,7 @@
   "dependencies": {
     "jsonfile": "^2.3.1",
     "lodash": "^4.15.0",
-<<<<<<< HEAD
-    "node-c-parser": "^1.0.0"
-=======
     "node-c-parser": "~1.0.0"
->>>>>>> 756daf7c26ab2d7e418f3926788f77abb67ccb9a
   },
   "devDependencies": {
     "assert": "^1.4.1",
