@@ -1,6 +1,6 @@
 {
   "name": "node-c-analyzer",
-  "version": "2.0.5",
+  "version": "3.0.0",
   "description": "Node module for static analysis of codes written in C programming language.",
   "main": "index.js",
   "directories": {
