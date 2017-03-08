@@ -48,4 +48,14 @@ describe('Symbol table', function() {
             done();
         });
     });
+
+    it("case_5 should have valid symbol table", function(done){
+        var get_symbol_table = require("../../lib/symbol_table/symbol_table").get_symbol_table;
+        var add_parent_edges = require("../../lib/utility/parse_tree_helper").add_parent_edges;
+        var file = __dirname + '/cases/case_5.js';
+        jsonfile.readFile(file, function(err, obj) {
+            var symtable = get_symbol_table(obj);
+            done();
+        });
+    });
 });
